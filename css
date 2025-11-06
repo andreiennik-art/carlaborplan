@@ -1,5 +1,4 @@
-main.py
-from fastapi import FastAPI, Response
+from fastapi import FastAPI
 import uvicorn
 
 app = FastAPI(title="Carlabor Estimator")
@@ -12,7 +11,5 @@ def health():
 def index():
     return {"status": "Carlabor backend works!"}
 
-# Дальше будем расширять – добавим панели, расчёты, PDF, всё внутри этого файла
-
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
